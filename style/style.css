@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+body{
+    background-color: rgba(99, 110, 114,1.0)
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.field{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+label{
+    margin: 5px;
+}
+.btns{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    padding: 10px;
+}
+div{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+.btns>div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    cursor: pointer;
+    width: 173px;
+    align-content: center;
+    border-radius: 5px;
+    border: 1px solid black;
+    outline: none;
+    margin: 10px;
+}
+
