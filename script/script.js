@@ -1,6 +1,5 @@
 const addFormElem = document.forms[0];
 const searchFormElem = document.forms[1];
-// const sElem = searchFormElem.search;
 const resultElem = document.querySelector('#result');
 const upSortElem = document.querySelector('.sortUp');
 const downSortElem = document.querySelector('.sortDown');
