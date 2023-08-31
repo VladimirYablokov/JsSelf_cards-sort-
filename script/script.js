@@ -45,57 +45,47 @@ function render(list) {
 };
 render(cards);
 
-function formAdd() {
-    addFormElem.addEventListener('submit', event => {
-        event.preventDefault();
-        const title = event.target.title.value;
-        const status = event.target.status.value;
-        if (title !== '' && status !== '') {
-            cards.push({
-                title,
-                status
-            });
-        } else {
-            alert('одно из полей пустое!')
-        }
-        event.target.title.value = '';
-        event.target.status.value = ''
-        render(cards);
-    });
-}
-formAdd()
+addFormElem.addEventListener('submit', event => {
+    event.preventDefault();
+    const title = event.target.title.value;
+    const status = event.target.status.value;
+    if (title !== '' && status !== '') {
+        cards.push({
+            title,
+            status
+        });
+    } else {
+        alert('одно из полей пустое!')
+    }
+    event.target.title.value = '';
+    event.target.status.value = ''
+    render(cards);
+});
 
-function formSearch() {
-    searchFormElem.addEventListener('submit', event => {
-        event.preventDefault();
-        if (searchFormElem.search.value === '') {
-            alert('введите значение поиска');
-        } else {
-            const value = event.target.search.value;
-            const lst = cards.filter(elem => elem.title.startsWith(value));
-            event.target.search.value = '';
-            render(lst);
-        };
-    });
-}
-formSearch()
-
-function sort() {
-    upAlphabetSortElem.addEventListener('click', event => {
-        cards.sort((value1, value2) => value1.title.localeCompare(value2.title))
-        render(cards);
-    });
-    downAlphabetSortElem.addEventListener('click', event => {
-        cards.sort((value1, value2) => value2.title.localeCompare(value1.title))
-        render(cards);
-    });
-    upStatusSortElem.addEventListener('click', event => {
-        cards.sort((value1, value2) => value1.status.localeCompare(value2.status))
-        render(cards);
-    });
-    downStatusSortElem.addEventListener('click', event => {
-        cards.sort((value1, value2) => value2.status.localeCompare(value1.status))
-        render(cards);
-    });
-}
-sort()
+searchFormElem.addEventListener('submit', event => {
+    event.preventDefault();
+    if (searchFormElem.search.value === '') {
+        alert('введите значение поиска');
+    } else {
+        const value = event.target.search.value;
+        const lst = cards.filter(elem => elem.title.startsWith(value));
+        event.target.search.value = '';
+        render(lst);
+    };
+});
+upAlphabetSortElem.addEventListener('click', event => {
+    cards.sort((value1, value2) => value1.title.localeCompare(value2.title))
+    render(cards);
+});
+downAlphabetSortElem.addEventListener('click', event => {
+    cards.sort((value1, value2) => value2.title.localeCompare(value1.title))
+    render(cards);
+});
+upStatusSortElem.addEventListener('click', event => {
+    cards.sort((value1, value2) => value1.status.localeCompare(value2.status))
+    render(cards);
+});
+downStatusSortElem.addEventListener('click', event => {
+    cards.sort((value1, value2) => value2.status.localeCompare(value1.status))
+    render(cards);
+});
